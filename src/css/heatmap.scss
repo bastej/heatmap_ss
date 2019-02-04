@@ -1,0 +1,77 @@
+#cav-box {
+  display: block;
+  z-index: 1000;
+}
+
+#canvas {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1001;
+  display: none;
+}
+
+#slider {
+  padding: 5px;
+  text-align: center;
+  width: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: all ease-in-out 200ms;
+  input {
+    width: inherit;
+  }
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  width: 100%;
+  margin: 7.3px 0;
+}
+input[type="range"]:focus {
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  height: 19px;
+  width: 19px;
+  border-radius: 10px;
+  background: #fb9607;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -7.5px;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 5px;
+  cursor: pointer;
+  background: #ededed;
+  border-radius: 1.3px;
+}
+
+#slider span {
+  color: #fff;
+}
+.hidden {
+  display: none;
+}
+.visible {
+  display: block;
+}
+.darkBg {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.appInterface {
+  position: fixed;
+  z-index: 1002;
+
+  max-width: 300px;
+  text-align: center;
+  margin: 10px;
+  border: 3px solid orange;
+  padding: 10px;
+  background: #fff;
+  border-radius: 15px;
+}
