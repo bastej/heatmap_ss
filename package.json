@@ -5,8 +5,8 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build:dev": "webpack --mode development",
-    "start": "node app"
+    "start": "node app",
+    "build:dev": "webpack --mode development"
   },
   "author": "Sebastian Siatka",
   "license": "ISC",

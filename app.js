@@ -29,7 +29,7 @@ var fs = require("fs");
 var webpack = require("webpack");
 var WebpackDevServer = require("webpack-dev-server");
 var config = require("./webpack.config");
-var port = process.env.PORT || 8080;
+var port = process.env.PORT || 5000;
 
 const options = {
   // contentBase: __dirname + "/",
@@ -39,7 +39,7 @@ const options = {
   },
   inline: true,
   hot: true,
-  host: "localhost",
+  // host: "localhost",
   proxy: {
     "^/api/*": {
       target: "http://localhost:" + port + "/api/",
@@ -80,7 +80,7 @@ WebpackDevServer.addDevServerEntrypoints(config, options);
 const compiler = webpack(config);
 var server = new WebpackDevServer(compiler, options);
 
-server.listen(port, "127.0.0.1", error => {
+server.listen(port, error => {
   if (error) {
     console.log(error);
   }
