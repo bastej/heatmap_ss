@@ -29,6 +29,7 @@ var fs = require("fs");
 var webpack = require("webpack");
 var WebpackDevServer = require("webpack-dev-server");
 var config = require("./webpack.config");
+var port = process.env.PORT || 8080;
 
 const options = {
   // contentBase: __dirname + "/",
@@ -41,7 +42,7 @@ const options = {
   host: "localhost",
   proxy: {
     "^/api/*": {
-      target: "http://localhost:8085/api/",
+      target: "http://localhost:" + port + "/api/",
       secure: false,
       changeOrigin: true
     }
@@ -79,12 +80,12 @@ WebpackDevServer.addDevServerEntrypoints(config, options);
 const compiler = webpack(config);
 var server = new WebpackDevServer(compiler, options);
 
-server.listen(8085, "127.0.0.1", error => {
+server.listen(port, "127.0.0.1", error => {
   if (error) {
     console.log(error);
   }
 
-  console.log("Starting server on http://localhost:8085");
+  console.log("Starting server on http://localhost:" + port);
 });
 
 // if (module.hot) {
