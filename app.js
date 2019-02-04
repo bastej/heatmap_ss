@@ -23,7 +23,7 @@ var fs = require("fs");
 //   }
 // });
 
-// server.listen(8080, "127.0.0.1");
+// server.listen(8081, "127.0.0.1");
 // console.log("listening to port 3000");
 
 var webpack = require("webpack");
@@ -42,7 +42,7 @@ const options = {
   host: "localhost",
   proxy: {
     "^/api/*": {
-      target: "http://localhost:8080/api/",
+      target: "http://localhost:8081/api/",
       secure: false,
       changeOrigin: true
     }
@@ -80,12 +80,12 @@ WebpackDevServer.addDevServerEntrypoints(config, options);
 const compiler = webpack(config);
 var server = new WebpackDevServer(compiler, options);
 
-server.listen(8080, "127.0.0.1", error => {
+server.listen(8081, "127.0.0.1", error => {
   if (error) {
     console.log(error);
   }
 
-  console.log("Starting server on http://localhost:8080");
+  console.log("Starting server on http://localhost:8081");
 });
 
 // if (module.hot) {
