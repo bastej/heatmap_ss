@@ -39,7 +39,8 @@ const options = {
   },
   inline: true,
   hot: true,
-  // host: "localhost",
+  port: port,
+  host: "localhost",
   // proxy: {
   //   "^/api/*": {
   //     target: "http://localhost:" + port + "/api/",
