@@ -47,6 +47,7 @@ const options = {
   //     changeOrigin: true
   //   }
   // },
+  disableHostCheck: true,
   headers: { "X-Custom-Header": "yes" },
   before: function(app) {
     // Here you can access the Express app object and add your own custom middleware to it.
