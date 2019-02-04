@@ -346,7 +346,7 @@ function Heatmap() {
       this.dataStatus === "toUpdate" && this.saveToJSON();
 
       this.heatmapStatus = "off";
-      executed = false;
+      // executed = false;
       // _this.startAJAXSending();
     }
     e.target.classList.add("touched");
