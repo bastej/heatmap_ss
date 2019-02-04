@@ -12,9 +12,6 @@ module.exports = {
     filename: "bundle.js"
     // publicPath: "/dist"
   },
-  // resolve: {
-  //   modulesDirectories: ["node_modules", "src"],
-  // },
   resolve: {
     modules: ["node_modules"],
     extensions: [".js", ".scss"]
