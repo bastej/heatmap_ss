@@ -28,7 +28,6 @@ var fs = require("fs");
 
 var webpack = require("webpack");
 var WebpackDevServer = require("webpack-dev-server");
-var path = require("path");
 var config = require("./webpack.config");
 
 const options = {
