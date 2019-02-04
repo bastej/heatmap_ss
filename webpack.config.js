@@ -12,8 +12,12 @@ module.exports = {
     filename: "bundle.js"
     // publicPath: "/dist"
   },
-  resolveLoader: {
-    root: path.join(__dirname, "node_modules")
+  // resolve: {
+  //   modulesDirectories: ["node_modules", "src"],
+  // },
+  resolve: {
+    modules: ["node_modules"],
+    extensions: [".js", ".scss"]
   },
   module: {
     rules: [
