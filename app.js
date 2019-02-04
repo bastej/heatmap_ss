@@ -40,13 +40,13 @@ const options = {
   inline: true,
   hot: true,
   // host: "localhost",
-  proxy: {
-    "^/api/*": {
-      target: "http://localhost:" + port + "/api/",
-      secure: false,
-      changeOrigin: true
-    }
-  },
+  // proxy: {
+  //   "^/api/*": {
+  //     target: "http://localhost:" + port + "/api/",
+  //     secure: false,
+  //     changeOrigin: true
+  //   }
+  // },
   headers: { "X-Custom-Header": "yes" },
   before: function(app) {
     // Here you can access the Express app object and add your own custom middleware to it.
