@@ -29,7 +29,7 @@ var fs = require("fs");
 var webpack = require("webpack");
 var WebpackDevServer = require("webpack-dev-server");
 var config = require("./webpack.config");
-var port = process.env.PORT || 5000;
+var port = process.env.PORT || 8080;
 
 const options = {
   // contentBase: __dirname + "/",
@@ -82,7 +82,7 @@ WebpackDevServer.addDevServerEntrypoints(config, options);
 const compiler = webpack(config);
 var server = new WebpackDevServer(compiler, options);
 
-server.listen(port, "0.0.0.0", error => {
+server.listen(port, require("os").hostname(), error => {
   if (error) {
     console.log(error);
   }
