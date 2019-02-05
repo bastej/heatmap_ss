@@ -108,7 +108,7 @@ function shutdown(signal) {
     setTimeout(() => {
       console.log("...waited 5s, exiting.");
       process.exit(err ? 1 : 0);
-    }, 5000).unref();
+    }, port).unref();
   };
 }
 
