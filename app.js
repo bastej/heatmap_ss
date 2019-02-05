@@ -41,13 +41,13 @@ const options = {
   hot: process.env.NODE_ENV !== "production",
   port: port,
   host: require("os").hostname(),
-  // proxy: {
-  //   "^/api/*": {
-  //     target: "http://localhost:" + port + "/api/",
-  //     secure: false,
-  //     changeOrigin: true
-  //   }
-  // },
+  proxy: {
+    "^/api/*": {
+      target: require("os").hostname() + port + "/api/",
+      secure: false,
+      changeOrigin: true
+    }
+  },
   disableHostCheck: true,
   headers: {
     "Access-Control-Allow-Origin": "*",
