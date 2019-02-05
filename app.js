@@ -30,6 +30,7 @@ var webpack = require("webpack");
 var WebpackDevServer = require("webpack-dev-server");
 var config = require("./webpack.config");
 var port = process.env.PORT || 8080;
+var host = env.ROOT_URL || "localhost";
 
 const options = {
   // contentBase: __dirname + "/",
@@ -40,10 +41,10 @@ const options = {
   inline: true, //process.env.NODE_ENV !== "production"
   hot: process.env.NODE_ENV !== "production",
   port: port,
-  host: require("os").hostname(),
+  host: host,
   proxy: {
     "^/api/*": {
-      target: require("os").hostname() + port + "/api/",
+      target: host + port + "/api/",
       secure: false,
       changeOrigin: true
     }
@@ -91,7 +92,7 @@ server.listen(port, "0.0.0.0", error => {
     console.log(error);
   }
 
-  console.log("Starting server on " + require("os").hostname() + ":" + port);
+  console.log("Starting server on " + host + ":" + port);
 });
 
 // if (module.hot) {
