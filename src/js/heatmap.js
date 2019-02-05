@@ -261,7 +261,7 @@ function Heatmap() {
         callback && callback();
         _this.dataStatus = "ok";
       } else {
-        console.log("error przy wysylaniu");
+        //console.log("error przy wysylaniu");
       }
     };
 
