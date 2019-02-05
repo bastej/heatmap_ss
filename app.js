@@ -49,7 +49,11 @@ const options = {
   //   }
   // },
   disableHostCheck: true,
-  // headers: { "X-Custom-Header": "yes" },
+  headers: {
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Headers":
+      "Origin, X-Requested-With, Content-Type, Accept"
+  },
   before: function(app) {
     // Here you can access the Express app object and add your own custom middleware to it.
     // For example, to define custom handlers for some paths:
