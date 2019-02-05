@@ -30,7 +30,7 @@ var webpack = require("webpack");
 var WebpackDevServer = require("webpack-dev-server");
 var config = require("./webpack.config");
 var port = process.env.PORT || 8080;
-var host = env.ROOT_URL || "localhost";
+var host = process.env.ROOT_URL || "localhost";
 
 const options = {
   // contentBase: __dirname + "/",
