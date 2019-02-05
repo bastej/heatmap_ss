@@ -33,6 +33,11 @@ var port = process.env.PORT || 8080;
 var host =
   "heatmap-ss.herokuapp.com" || require("os").hostname() || "localhost";
 
+process
+  .on("SIGTERM", shutdown("SIGTERM"))
+  .on("SIGINT", shutdown("SIGINT"))
+  .on("uncaughtException", shutdown("uncaughtException"));
+
 const options = {
   // contentBase: __dirname + "/",
   // publicPath: "/",
@@ -95,6 +100,17 @@ server.listen(port, "0.0.0.0", error => {
 
   console.log("Starting server on " + host + ":" + port);
 });
+
+function shutdown(signal) {
+  return err => {
+    console.log(`${signal}...`);
+    if (err) console.error(err.stack || err);
+    setTimeout(() => {
+      console.log("...waited 5s, exiting.");
+      process.exit(err ? 1 : 0);
+    }, 5000).unref();
+  };
+}
 
 // if (module.hot) {
 //   module.hot.accept("./src/index.html", function() {
