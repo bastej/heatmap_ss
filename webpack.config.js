@@ -77,6 +77,9 @@ module.exports = {
       }
     ]
   },
+  optimization: {
+    minimize: false
+  },
   plugins: [
     new HtmlWebpackPlugin({
       filename: "index.html",
