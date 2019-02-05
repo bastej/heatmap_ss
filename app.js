@@ -82,7 +82,7 @@ WebpackDevServer.addDevServerEntrypoints(config, options);
 const compiler = webpack(config);
 var server = new WebpackDevServer(compiler, options);
 
-server.listen(port, require("os").hostname(), error => {
+server.listen(port, "0.0.0.0", error => {
   if (error) {
     console.log(error);
   }
