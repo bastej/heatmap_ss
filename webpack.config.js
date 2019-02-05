@@ -86,7 +86,6 @@ module.exports = {
       template: "src/index.html"
     }),
     new CleanWebpackPlugin(["dist"]),
-    process.env.NODE_ENV !== "production" &&
-      new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin()
   ]
 };

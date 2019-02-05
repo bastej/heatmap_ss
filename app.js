@@ -37,10 +37,10 @@ const options = {
   stats: {
     colors: true
   },
-  inline: true,
-  hot: true,
+  inline: true, //process.env.NODE_ENV !== "production"
+  hot: process.env.NODE_ENV !== "production",
   port: port,
-  host: "localhost",
+  host: require("os").hostname(),
   // proxy: {
   //   "^/api/*": {
   //     target: "http://localhost:" + port + "/api/",
@@ -87,7 +87,7 @@ server.listen(port, "0.0.0.0", error => {
     console.log(error);
   }
 
-  console.log("Starting server on http://localhost:" + port);
+  console.log("Starting server on " + require("os").hostname() + ":" + port);
 });
 
 // if (module.hot) {
