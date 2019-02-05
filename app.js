@@ -30,7 +30,7 @@ var webpack = require("webpack");
 var WebpackDevServer = require("webpack-dev-server");
 var config = require("./webpack.config");
 var port = process.env.PORT || 8080;
-var host = require("os") || "localhost";
+var host = require("os").hostname() || "localhost";
 
 const options = {
   // contentBase: __dirname + "/",
@@ -44,7 +44,7 @@ const options = {
   host: host,
   proxy: {
     "^/api/*": {
-      target: "http://localhost:" + port + "/api/",
+      target: host + port + "/api/",
       secure: false,
       changeOrigin: true
     }
