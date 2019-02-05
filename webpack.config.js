@@ -85,7 +85,7 @@ module.exports = {
       filename: "index.html",
       template: "src/index.html"
     }),
-    new CleanWebpackPlugin(["dist"]),
-    new webpack.HotModuleReplacementPlugin()
+    new CleanWebpackPlugin(["dist"])
+    // new webpack.HotModuleReplacementPlugin()
   ]
 };
