@@ -30,7 +30,8 @@ var webpack = require("webpack");
 var WebpackDevServer = require("webpack-dev-server");
 var config = require("./webpack.config");
 var port = process.env.PORT || 8080;
-var host = require("os").hostname() || "localhost";
+var host =
+  "https://heatmap-ss.herokuapp.com" || require("os").hostname() || "localhost";
 
 const options = {
   // contentBase: __dirname + "/",
